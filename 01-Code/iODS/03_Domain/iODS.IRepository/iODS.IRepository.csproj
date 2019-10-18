@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>iODS.Domain</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="sqlSugarCore" Version="5.0.0.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\01_Commom\Hollysys.Common\Hollysys.Common.csproj" />
+      <ProjectReference Include="..\iODS.Model\iODS.Model.csproj" />
+    </ItemGroup>
+
+</Project>

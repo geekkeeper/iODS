@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\netcoreapp3.0\iODS.WebApiService.xml</DocumentationFile>
+      <NoWarn>1701;1702;1591</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\netcoreapp3.0\iODS.WebApiService.xml</DocumentationFile>
+      <NoWarn>1701;1702;1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\02_Infrastructure\iODS.Repository.SQLSugar\iODS.Repository.SQLSugar.csproj" />
+      <ProjectReference Include="..\..\04_Business\iODS.Service\iODS.Service.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="4.9.4" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+      <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
+      <PackageReference Include="Castle.Core" Version="4.4.0" />
+      <PackageReference Include="FluentValidation" Version="8.5.0" />
+      <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.1.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
+    </ItemGroup>
+
+</Project>

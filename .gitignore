@@ -1,0 +1,10 @@
+obj
+/01-Code/iODS/04_Business/iODS.Service/obj
+/01-Code/iODS/04_Business/iODS.IService/obj
+/01-Code/iODS/03_Domain/iODS.Domain/obj
+/01-Code/iODS/02_Infrastructure/iODS.Repository.Dapper/obj
+/01-Code/iODS/02_Infrastructure/iODS.Repository.EF/obj
+/01-Code/iODS/02_Infrastructure/iODS.Repository.SQLSugar/obj
+/01-Code/iODS/01_Commom/Hollysys.Common/obj
+/01-Code/iODS/.idea
+/01-Code/iODS/04_Business/iODS.IService
