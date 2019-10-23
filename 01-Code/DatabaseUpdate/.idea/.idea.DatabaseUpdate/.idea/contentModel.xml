@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\XunBook\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\XunBook\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_DatabaseUpdate.-378484034.00" t="ExcludeRecursive" />
-    <e p="D:\01-C#_Workspace\01-NetCoreProjects\iODS\01-Code\DatabaseUpdate" t="IncludeFlat">
+    <e p="C:\Users\wangxun183963\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\wangxun183963\.Rider2019.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\wangxun183963\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\wangxun183963\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_DatabaseUpdate.-719301353.00" t="ExcludeRecursive" />
+    <e p="E:\01_C#_Workspaces\05_WebApiService\iODS\01-Code\DatabaseUpdate" t="IncludeFlat">
       <e p="DatabaseUpdate" t="IncludeRecursive">
         <e p="Annotation" t="Include">
           <e p="Common" t="Include">
