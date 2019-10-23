@@ -1,4 +1,6 @@
-﻿namespace DatabaseUpdate
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace DatabaseUpdate
 {
     internal class Program
     {
@@ -15,6 +17,8 @@
 
         private static void Main()
         {
+           var  context = new  TestDBContext();
+           context.Database.Migrate();
             
             //TODO：判断数据库是否存在
             if (IsExistDB)
@@ -33,6 +37,7 @@
             {
                 //TODO:不存在-->创建最新版数据库
             }
+
         }
 
         /// <summary>

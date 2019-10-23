@@ -1,3 +1,5 @@
+using System;
+
 namespace DatabaseUpdate.Entity
 {
     /// <summary>
@@ -13,7 +15,7 @@ namespace DatabaseUpdate.Entity
         /// <summary>
         /// 资源名称
         /// </summary>
-        public string Name { get; set; }
+        public string ResourceName { get; set; }
 
         /// <summary>
         /// 资源连接地址
@@ -31,6 +33,11 @@ namespace DatabaseUpdate.Entity
         public string ResourceType { get; set; }
 
         /// <summary>
+        /// 资源值
+        /// </summary>
+        public string Value { get; set; }
+
+        /// <summary>
         /// 资源状态；Y:启用;N：禁用
         /// </summary>
         public string Status { get; set; }
@@ -41,28 +48,33 @@ namespace DatabaseUpdate.Entity
         public string ParentId { get; set; }
 
         /// <summary>
-        /// 创建时间
-        /// </summary>
-        public System.DateTime? CreatedTime { get; set; }
-
-        /// <summary>
-        /// 创建人;jAVA后台写入为-1,存储过程批量处理写入为-2,其它情况为真实的用户ID
+        /// 创建人
         /// </summary>
         public string CreatedBy { get; set; }
 
         /// <summary>
-        /// 修改时间
+        /// 创建时间
         /// </summary>
-        public System.DateTime? UpdatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
-        /// 修改人;jAVA后台写入为-1,存储过程批量处理写入为-2,其它情况为真实的用户ID
+        /// 修改人
         /// </summary>
         public string UpdatedBy { get; set; }
 
         /// <summary>
-        /// 资源值
+        /// 修改时间
         /// </summary>
-        public string Value { get; set; }
+        public DateTime? UpdatedTime { get; set; }
+
+        /// <summary>
+        ///     备注
+        /// </summary>
+        public string Remark { get; set; }
+
+        /// <summary>
+        /// 保留字段
+        /// </summary>
+        public string Reserved { get; set; }
     }
 }

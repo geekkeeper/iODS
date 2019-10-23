@@ -5,7 +5,7 @@ namespace iODS.Model
     /// <summary>
     /// 公司/部门表
     /// </summary>
-    [SugarTable("SM_Department")]
+    [SugarTable("SM_Department",)]
     public class Department : BaseEntity
     {
         /// <summary>

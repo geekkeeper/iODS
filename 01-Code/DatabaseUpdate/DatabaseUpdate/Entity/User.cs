@@ -1,3 +1,5 @@
+using System;
+
 namespace DatabaseUpdate.Entity
 {
     /// <summary>
@@ -8,22 +10,22 @@ namespace DatabaseUpdate.Entity
         /// <summary>
         /// 用户ID 
         /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// 部门ID
-        /// </summary>
-        public string DeptId { get; set; }
-
-        /// <summary>
-        /// 微信账号
-        /// </summary>
-        public string WechatId { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// 用户名
         /// </summary>
         public string UserName { get; set; }
+
+        /// <summary>
+        /// 账户
+        /// </summary>
+        public string Account { get; set; }
+
+        /// <summary>
+        /// 微信账号
+        /// </summary>
+        public string WechatId { get; set; }
 
         /// <summary>
         /// 密码
@@ -43,17 +45,17 @@ namespace DatabaseUpdate.Entity
         /// <summary>
         /// 性别;M-男,F-女,U-未知
         /// </summary>
-        public string Sex { get; set; }
+        public Sex Sex { get; set; }
 
         /// <summary>
         /// 学历
         /// </summary>
-        public string Education { get; set; }
+        public EducationBackground Education { get; set; }
 
         /// <summary>
-        /// 图片
+        /// 照片地址
         /// </summary>
-        public string Picture { get; set; }
+        public string PictureUrl { get; set; }
 
         /// <summary>
         /// 国籍/民族
@@ -68,7 +70,7 @@ namespace DatabaseUpdate.Entity
         /// <summary>
         /// 加入时间
         /// </summary>
-        public System.DateTime? JoinedTime { get; set; }
+        public DateTime? EntryTime { get; set; }
 
         /// <summary>
         /// 住址
@@ -90,15 +92,17 @@ namespace DatabaseUpdate.Entity
         /// </summary>
         public string Email { get; set; }
 
+        public IdType IdType { get; set; }
+
         /// <summary>
-        /// 身份证号码
+        /// 证件号码
         /// </summary>
-        public string CardId { get; set; }
+        public string IdNumber { get; set; }
 
         /// <summary>
         /// 政治面貌
         /// </summary>
-        public string PoliticalType { get; set; }
+        public PoliticsStatus PoliticsStatus { get; set; }
 
         /// <summary>
         /// 工作年限
@@ -108,7 +112,7 @@ namespace DatabaseUpdate.Entity
         /// <summary>
         /// 在职状态:1-在职,0-离职
         /// </summary>
-        public string State { get; set; }
+        public WorkingState WorkingState { get; set; }
 
         /// <summary>
         /// 工资卡
@@ -116,43 +120,172 @@ namespace DatabaseUpdate.Entity
         public string WageCard { get; set; }
 
         /// <summary>
-        /// 文件
-        /// </summary>
-        public string Files { get; set; }
-
-        /// <summary>
         /// 开户行
         /// </summary>
         public string OpeningBank { get; set; }
 
         /// <summary>
-        /// 津贴
-        /// </summary>
-        public string Perdiem { get; set; }
-
-        /// <summary>
-        /// 创建时间
-        /// </summary>
-        public System.DateTime? CreatedTime { get; set; }
-
-        /// <summary>
-        /// 创建人;jAVA后台写入为-1,存储过程批量处理写入为-2,其它情况为真实的用户ID
+        /// 创建人
         /// </summary>
         public string CreatedBy { get; set; }
 
         /// <summary>
-        /// 修改时间
+        /// 创建时间
         /// </summary>
-        public System.DateTime? UpdatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
-        /// 修改人;jAVA后台写入为-1,存储过程批量处理写入为-2,其它情况为真实的用户ID
+        /// 修改人
         /// </summary>
         public string UpdatedBy { get; set; }
 
         /// <summary>
-        /// 是否超级管理员:是-Y,否-N
+        /// 修改时间
         /// </summary>
-        public string IsSuperAdmin { get; set; }
+        public DateTime? UpdatedTime { get; set; }
+    }
+
+    public enum WorkingState
+    {
+        /// <summary>
+        /// 在职
+        /// </summary>
+        Incumbency,
+
+        /// <summary>
+        /// 离职
+        /// </summary>
+        Dimission
+    }
+
+    /// <summary>
+    /// 政治面貌
+    /// </summary>
+    public enum PoliticsStatus
+    {
+        /// <summary>
+        /// 群众
+        /// </summary>
+        Masses,
+
+        /// <summary>
+        /// 党员
+        /// </summary>
+        PartyMember,
+
+        /// <summary>
+        /// 团员
+        /// </summary>
+        LeagueMember,
+
+        /// <summary>
+        /// 其他
+        /// </summary>
+        Other
+    }
+
+    /// <summary>
+    /// 证件类型
+    /// </summary>
+    public enum IdType
+    {
+        /// <summary>
+        /// 居民户口簿
+        /// </summary>
+        HouseholdRegister,
+
+        /// <summary>
+        /// 居民身份证
+        /// </summary>
+        IDCard,
+
+        /// <summary>
+        /// 护照
+        /// </summary>
+        Passport,
+
+        /// <summary>
+        /// 出入境通行证
+        /// </summary>
+        GatePass,
+
+        /// <summary>
+        /// 现役军官证
+        /// </summary>
+        MilitaryCard,
+
+        /// <summary>
+        /// 现役士官证
+        /// </summary>
+        SergeantCard,
+
+        /// <summary>
+        /// 现役士兵证
+        /// </summary>
+        SoldierCard,
+
+        /// <summary>
+        /// 社会保障卡
+        /// </summary>
+        SinCard
+    }
+
+    /// <summary>
+    /// 教育背景
+    /// </summary>
+    public enum EducationBackground
+    {
+        /// <summary>
+        /// 小学
+        /// </summary>
+        Primary,
+
+        /// <summary>
+        /// 初中
+        /// </summary>
+        Junior,
+
+        /// <summary>
+        /// 高中
+        /// </summary>
+        Senior,
+
+        /// <summary>
+        /// 大专
+        /// </summary>
+        College,
+
+        /// <summary>
+        /// 本科
+        /// </summary>
+        Bachelor,
+
+        /// <summary>
+        /// 硕士
+        /// </summary>
+        Master,
+
+        /// <summary>
+        /// 博士
+        /// </summary>
+        Doctor,
+
+        /// <summary>
+        /// 博士后
+        /// </summary>
+        PostDoctor
+    }
+
+    public enum Sex
+    {
+        /// <summary>
+        /// 女
+        /// </summary>
+        Female,
+
+        /// <summary>
+        /// 男
+        /// </summary>
+        Male
     }
 }

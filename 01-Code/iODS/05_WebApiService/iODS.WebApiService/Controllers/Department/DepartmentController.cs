@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using FluentValidation;
+using Hollysys.Common;
 using iODS.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,12 @@ namespace iODS.WebApiService.Controllers
     {
         private readonly IValidator<Department> _validator;
 
+       // private readonly IDepartmentService _service;
+
+//        public DepartmentController(IDepartmentService service)
+//        {
+//            this._service = service;
+//        }
 
         /// <summary>
         /// 增加数据
@@ -22,6 +29,7 @@ namespace iODS.WebApiService.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(403)]
         //[Route("DepartmentController/Add")]
         public async Task<IActionResult> Add([FromBody]Department model)
         {

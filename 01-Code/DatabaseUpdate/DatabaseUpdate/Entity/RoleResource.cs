@@ -1,7 +1,7 @@
 namespace DatabaseUpdate.Entity
 {
     /// <summary>
-    /// 角色资源
+    /// 角色资源关系表
     /// </summary>
     public class RoleResource
     {

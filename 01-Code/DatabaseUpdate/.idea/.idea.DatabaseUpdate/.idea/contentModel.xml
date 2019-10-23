@@ -35,11 +35,27 @@
         <e p="DatabaseUpdate.csproj.DotSettings" t="Include" />
         <e p="Entity" t="Include">
           <e p="department.cs" t="Include" />
+          <e p="DepartmentUser.cs" t="Include" />
+          <e p="Project.cs" t="Include" />
           <e p="resource.cs" t="Include" />
           <e p="role.cs" t="Include" />
           <e p="RoleResource.cs" t="Include" />
+          <e p="TestNotMapped.cs" t="Include" />
           <e p="user.cs" t="Include" />
           <e p="UserRole.cs" t="Include" />
+        </e>
+        <e p="Helper" t="Include">
+          <e p="ReflectionHelper.cs" t="Include" />
+        </e>
+        <e p="Mapping" t="Include">
+          <e p="EntityMap.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20191022024915_InitialCreate.cs" t="Include" />
+          <e p="20191022024915_InitialCreate.Designer.cs" t="Include" />
+          <e p="20191022031406_AddProductReviews.cs" t="Include" />
+          <e p="20191022031406_AddProductReviews.Designer.cs" t="Include" />
+          <e p="TestDBContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="DatabaseModel.cs" t="Include" />
@@ -53,6 +69,7 @@
           </e>
         </e>
         <e p="Program.cs" t="Include" />
+        <e p="TestDBContext.cs" t="Include" />
       </e>
       <e p="DatabaseUpdate.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

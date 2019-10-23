@@ -1,12 +1,9 @@
-using DatabaseUpdate.Annotation.Table;
-
 namespace DatabaseUpdate.Entity
 {
     /// <summary>
-    /// 用户角色
+    /// 部门用户关系表
     /// </summary>
-    [EnabledTable(false)]
-    public class UserRole
+    public class DepartmentUser
     {
         /// <summary>
         /// ID
@@ -16,11 +13,11 @@ namespace DatabaseUpdate.Entity
         /// <summary>
         /// 用户ID
         /// </summary>
-        public int UserId { get; set; }
+        public int DepartmentId { get; set; }
 
         /// <summary>
         /// 角色ID
         /// </summary>
-        public int RoleId { get; set; }
+        public int UserId { get; set; }
     }
 }

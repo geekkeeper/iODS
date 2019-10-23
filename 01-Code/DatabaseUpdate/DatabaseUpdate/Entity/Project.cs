@@ -3,59 +3,50 @@ using System;
 namespace DatabaseUpdate.Entity
 {
     /// <summary>
-    /// 部门
+    /// 工程
     /// </summary>
-    public class Department
+    public class Project
     {
         /// <summary>
-        /// 部门ID
+        ///     工程ID
         /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// 部门名称
+        ///     工程名称
         /// </summary>
-        public string DepartmentName { get; set; }
+        public string ProjectName { get; set; }
 
         /// <summary>
-        /// 类型布尔值，true代表为分公司，false表示不是分公司
+        /// GTPlus 组态工程编号
         /// </summary>
-        public bool Branch { get; set; }
-        
-        /// <summary>
-        /// 上级部门ID
-        /// </summary>
-        public int SuperiorId { get; set; }
+        public string GTProjectCode { get; set; }
 
         /// <summary>
-        /// 领导
+        ///     创建人
         /// </summary>
-        public int Leader { get; set; }
+        public string CreatedBy { get; set; }
 
         /// <summary>
-        /// 创建时间
+        ///     创建时间
         /// </summary>
         public DateTime? CreatedTime { get; set; }
 
         /// <summary>
-        /// 创建人;
+        ///     修改人
         /// </summary>
-        public int CreatedBy { get; set; }
+        public string UpdatedBy { get; set; }
 
         /// <summary>
-        /// 修改时间
+        ///     修改时间
         /// </summary>
         public DateTime? UpdatedTime { get; set; }
-
-        /// <summary>
-        /// 修改人;
-        /// </summary>
-        public int UpdatedBy { get; set; }
 
         /// <summary>
         ///     备注
         /// </summary>
         public string Remark { get; set; }
+
         /// <summary>
         /// 保留字段
         /// </summary>
