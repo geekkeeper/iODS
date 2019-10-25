@@ -22,8 +22,10 @@ namespace DatabaseUpdate.Mapping
         public static void DepartmentCreating(this ModelBuilder modelBuilder)
         {
             EntityTypeBuilder<Department> entity = modelBuilder.Entity<Department>().ToTable(nameof(Department));
-            entity.HasKey(d => d.Id)                                        //设置主键
+            entity.HasKey(d => d.Id)                                        //--设置主键--
                   .HasName("PK_DepartmentID");                              //主键名称
+            entity.HasIndex(d => d.Id)                                      //--设置索引--
+                  .HasName("Index_DepartmentID");                                     //索引名称
             entity.Property(d => d.Id)                                      //--部门ID--
                   .HasColumnName(nameof(Department.Id))                     //字段名称
                   .HasColumnType("int")                                     //字段类型
@@ -32,7 +34,7 @@ namespace DatabaseUpdate.Mapping
             entity.Property(d => d.DepartmentName)                          //--部门名称--
                   .HasColumnName(nameof(Department.DepartmentName))         //字段名称
                   .HasColumnType("varchar(20)")                             //字段类型
-                  .IsRequired();                                            //不能为空
+                  .IsRequired();                                            //不能为Null
             entity.Property(d => d.Branch)                                  //-是否是公司-
                   .HasColumnName(nameof(Department.Branch))                 //字段名称
                   .IsRequired();                                            //不能为Null
@@ -63,7 +65,17 @@ namespace DatabaseUpdate.Mapping
         /// <param name="modelBuilder"></param>
         public static void DepartmentUserCreating(this ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<DepartmentUser>();
+            EntityTypeBuilder<DepartmentUser> entity = modelBuilder.Entity<DepartmentUser>()
+                                                                   .ToTable(nameof(DepartmentUser));
+            entity.Property(dr => dr.Id)
+                  .HasColumnName(nameof(DepartmentUser.Id))
+                  .HasColumnType("int").IsRequired();
+            entity.Property(dr => dr.DepartmentId)
+                  .HasColumnName(nameof(DepartmentUser.DepartmentId))
+                  .HasColumnType("int").IsRequired();
+            entity.Property(dr => dr.UserId)
+                  .HasColumnName(nameof(DepartmentUser.UserId))
+                  .HasColumnType("int").IsRequired();
         }
 
         /// <summary>
@@ -72,7 +84,28 @@ namespace DatabaseUpdate.Mapping
         /// <param name="modelBuilder"></param>
         public static void ProjectCreating(this ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Project>();
+           EntityTypeBuilder<Project> entity =modelBuilder.Entity<Project>().ToTable(nameof(Project));
+           entity.Property(p => p.Id)
+                 .HasColumnName(nameof(Project.Id))
+                 .HasColumnType("int");
+           entity.HasKey(p => p.Id)
+                 .HasName("PK_ProjectID");
+           entity.HasIndex(p => p.Id)
+                 .HasName("Index_ProjectID");
+           entity.Property(p => p.ProjectName)
+                 .HasColumnName(nameof(Project.ProjectName))
+                 .HasColumnType("varchar(20)")
+                 .IsRequired();
+           entity.Property(p => p.GTProjectCode)
+                 .HasColumnName(nameof(Project.GTProjectCode))
+                 .HasColumnType("varchar(20)")
+                 .IsRequired();
+           entity.Property(p => p.CreatedBy);
+           entity.Property(p => p.CreatedTime);
+           entity.Property(p => p.UpdatedBy);
+           entity.Property(p => p.UpdatedTime);
+           entity.Property(p => p.Remark);
+           entity.Ignore(p => p.Reserved);
         }
 
         /// <summary>

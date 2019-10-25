@@ -1,4 +1,3 @@
-using DatabaseUpdate.Entity;
 using DatabaseUpdate.Mapping;
 using Microsoft.EntityFrameworkCore;
 
